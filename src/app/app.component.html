@@ -1,2 +1,10 @@
-<digital-clock #digitalClock></digital-clock>
-
+<div class="display">
+    <digital-clock #digitalClock></digital-clock>
+    <ng-container *ngIf="buttonStatus else second">
+        <button (click)="start()">Start</button>
+    </ng-container>
+    <ng-template #second>
+        <button (click)="pause()">Pause</button>
+    </ng-template>
+    <button (click)="stop()">Stop</button>
+</div>
